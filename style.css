@@ -7,17 +7,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   list-style: none;
+  text-decoration: none;
   color: #333;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .mt-24{
   margin-top: 24px;
-}
-
-.outline{
-  /* just for debbuging */
-  outline: ridge red;
 }
 
 .app{
@@ -46,6 +43,26 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+
+.links{
+  position: relative;
+  cursor: pointer;
+}
+
+.links::after{
+  position: absolute;
+  content: "";
+  background-color: currentColor;
+  top: 20px;
+  left: 0;
+  height: 1.3px;
+  transition: all 300ms ease-in-out;
+  width: 0;
+}
+
+.links:hover::after{
+  width: 100%;
 }
 
 .nav-items{
@@ -83,15 +100,20 @@
   font-size: 12px;
 }
 
+.subtitle{
+  font-size: 24px ;
+}
+
 .description{
   color: #4F4F4F;
   font-weight: 400;
   font-size: 12px;
+  max-width: 366px;
 }
 
 .portrait-img{
   width: 100%;
-  padding: 5%;
+  padding: 15px 5%;
 }
 
 .portrait-img img{
@@ -122,7 +144,7 @@
   background-color: #F2F2F2;
   padding: 15px 78px 15px 20px;
   width: 100%;
-  max-width: 350px;
+  max-width: 366px;
 }
 
 .input-container{
@@ -238,7 +260,6 @@
 .galery{
   display: flex;
   flex-direction: column;
-  /* padding: 40px; */
 }
 
 .galery-title{
@@ -353,48 +374,194 @@
   grid-row: 3/5;
 }
 
+.quote{
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px;
+
+}
+
+.quote-user{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 30px 0; 
+}
+
+.quote-img{
+  width: 80px;
+  border-radius: 12px;
+}
+
+.quote-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: max-content;
+  margin-left: 20px;
+}
+
+.quote-name{
+  font-size: 24px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.quote-charge{
+  font-size: 18px;
+  color: #828282;
+  font-weight: 500;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  background-color: #100E1D;
+  padding: 40px;
+}
+
+.social h1{
+  font-size: 36px;
+  font-weight: 800;
+  font-family:  'Heebo',Arial, Helvetica, sans-serif;
+  color: #F2F2F2;
+}
+
+.footer-links{
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.footer-links a{
+  color: #F2F2F2;
+  max-width: max-content;
+}
+
+.fab{
+  font-size: 24px;
+  color: #F2F2F2;
+}
+
+.credits{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 48px 0;
+  font-size: 10px;
+  margin-bottom: 0;
+
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #F2F2F2;
+}
+
+.username{
+  font-weight: 700;
+  color: #F2F2F2;
+  text-decoration: underline;
+}
+
+
+
 @media (min-width:500px) {
+
+  .navbar{
+    padding: 50px 4%;
+  }
 
   .mobile{
     display: none;
   }
-
+  
   .desktop{
     display: block;
   }
-
+  
   .nav-links{
     display: flex;
     flex-direction: row;
     column-gap: 15px;
   }
+  
+  .text-content{
+    margin-left: 18%;
+  }
 
+  .tiny-text{
+    font-size: 16px;
+  }
+
+  .subtitle{
+    font-size: 32px;
+  }
+  
+  .portrait-img{
+    padding: 25px 5%;
+  }
+
+  .description{
+  font-size: 18px;
+  }
+
+  .demand-services{
+    padding: 170px 8%;
+  }
+
+  .demand-services h3{
+    font-size: 36px;
+    margin: 0;
+  }
+
+  .galery-title{
+    margin: 0 8%;
+    font-size: 36px;
+  }
+  
   .galery-imgs{
     grid-template-columns: repeat(2,minmax(200px,545px));
+    padding: 0 8%;
   }
 
   .galery-card:nth-child(odd){
     transform: translateY(80px);
-    /* outline: #27AE60 solid; */
   }
 
   .galery-link{
     margin-top: 10px;
+    padding-right: 8%;
     align-self: flex-end;
   }
 
   .team{
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: space-between;
     align-items: center;
+    column-gap: 16px;
+    padding: 0 8%;
   }
 
   .team-text{
-    width: max-content;
+    min-width: max-content;
+  }
+
+  .team-header{
+    font-size: 12px;
+  }
+  
+  .team-title{
+    font-size: 20px;
+  }
+  
+  .team-description{
+    font-size: 12px;
   }
 
   .team-imgs{
-    gap: 24px;
+    max-width: 600px;
+    gap: 2vw;
   }
 
   .team-img-2{
@@ -402,4 +569,58 @@
     height: calc(100% - 30px);
     margin-top: 30px;
   }
+
+  .quote{
+    padding: 24px 8%;
+  }
+
+  .quote blockquote{
+    margin-top: 62px;
+    font-size: 20px;
+  }
+
+  .footer{
+    padding: 40px 5%;
+  }
+
+  .footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 10px;
+  }
+
+  .credits{
+    font-size: 14px;
+  }
+}
+
+@media (min-width:650px) {
+  
+  .tiny-text{
+    font-size: 18px;
+  }
+
+  .subtitle{
+    font-size: 48px;
+  }
+  
+  .quote blockquote{
+    margin-top: 62px;
+    font-size: 32px;
+    max-width: 930px ;
+  }
+
+  .team-header{
+    font-size: 18px;
+  }
+  
+  .team-title{
+    font-size: 36px;
+  }
+  
+  .team-description{
+    font-size: 16px;
+  }
+
 }
