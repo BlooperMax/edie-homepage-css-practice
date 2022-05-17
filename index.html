@@ -24,12 +24,25 @@
           <li class="nav-items desktop"><a href="#clients" class="links">Clients  </a></li>
           <li class="nav-items desktop"><a href="#contact" class="links">Contact  </a></li>
           <li class="nav-items mobile">
-            <button class="menu-button">
+            <button id="menu" class="menu-button">
               <span class="material-icons md-18">menu</span>
             </button>
           </li>
         </ul>
       </nav>
+
+      <div id="modal" class="modal-box none">
+        <ul class="menu-mobile mobile">
+          <li><a href="#home" class="links-mobile">Home     </a></li>
+          <li><a href="#services" class="links-mobile">Services </a></li>
+          <li><a href="#works" class="links-mobile">Our Works</a></li>
+          <li><a href="#clients" class="links-mobile">Clients  </a></li>
+          <li><a href="#contact" class="links-mobile">Contact  </a></li>
+          <button id="close" class="close-button">
+            <span class="material-icons">close</span>
+          </button>
+        </ul>
+      </div>
 
       <div id="home" class="text-content mt-24">
         <span class="tiny-text">Unhappy with your website?</span>
@@ -213,9 +226,7 @@
       </footer>
 
     </div>
-
-
-
+    
     <script type="module" src="/main.js"></script>
   </body>
 </html>
